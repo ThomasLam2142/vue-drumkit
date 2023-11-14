@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount} from 'vue';
 
+let drumSounds = {
+    'kick': new Audio('https://audio.jukehost.co.uk/zOjwMviukyheu1q6AMilmSO3xKvqjaSp'),
+    'snare': new Audio('https://audio.jukehost.co.uk/CgDXWh7vgiHo0jpFwa59x5I5YONOqChF'),
+    'cHat': new Audio('https://audio.jukehost.co.uk/5W2ihY2LTpzBwCPiEk2z1HftExZ84VuD'),
+    'oHat': new Audio('https://audio.jukehost.co.uk/lVYBZ714Yh4s3tXqSGo3ruTBgxvMAeeB'),
+    'hiTom': new Audio('https://audio.jukehost.co.uk/4GdQAmYkn15vUDgTewpoe3n3iEFCyrm4'),
+    'midTom': new Audio('https://audio.jukehost.co.uk/6378XALUjrm3RKrykCi8cIqO79DiBih9'),
+    'lowTom': new Audio('https://audio.jukehost.co.uk/XDLPKPL6m3WixAeqDRhDFicsWoDMA97R')
+};
 
+/*
 function drumPress(drum:string){
     let audio;
     switch(drum) {
@@ -32,7 +42,17 @@ function drumPress(drum:string){
     }
     audio.play();
 }
+*/
 
+let drumPress = (drum:string) => {
+    let audio = drumSounds[drum];
+    if (audio) {
+        audio.currentTime = 0; // rewind to start
+        audio.play();
+    } else {
+        console.log('Unknown drum type');
+    }
+}
 
 let handleKeyPress = (event:KeyboardEvent) => {
     switch(event.key) {
@@ -91,10 +111,6 @@ onBeforeUnmount(() => {
     <h5>
         Press the buttons or the coresponding keys to play the drums
     </h5>
-
-    <h6>
-        Sounds will lag first time they are played due to loading
-    </h6>    
 
     <div>
         <button @click="drumPress('kick')">Kick ('Q')</button> 
