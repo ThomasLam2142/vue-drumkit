@@ -88,6 +88,10 @@ onBeforeUnmount(() => {
         Drum Kit
     </h1>
 
+    <h5>
+        Press the buttons or the coresponding keys to play the drums
+    </h5>
+
     <div>
         <button @click="drumPress('kick')">Kick ('Q')</button> 
         <button @click="drumPress('snare')">Snare ('W')</button>
