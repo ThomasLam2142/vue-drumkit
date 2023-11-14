@@ -11,38 +11,6 @@ let drumSounds = {
     'lowTom': new Audio('https://audio.jukehost.co.uk/XDLPKPL6m3WixAeqDRhDFicsWoDMA97R')
 };
 
-/*
-function drumPress(drum:string){
-    let audio;
-    switch(drum) {
-        case 'kick':
-            audio = new Audio('https://audio.jukehost.co.uk/zOjwMviukyheu1q6AMilmSO3xKvqjaSp');
-            break;
-        case 'snare':
-            audio = new Audio('https://audio.jukehost.co.uk/CgDXWh7vgiHo0jpFwa59x5I5YONOqChF');
-            break;
-        case 'cHat':
-            audio = new Audio('https://audio.jukehost.co.uk/5W2ihY2LTpzBwCPiEk2z1HftExZ84VuD');
-            break;
-        case 'oHat':
-            audio = new Audio('https://audio.jukehost.co.uk/lVYBZ714Yh4s3tXqSGo3ruTBgxvMAeeB');
-            break;
-        case 'hiTom':
-            audio = new Audio('https://audio.jukehost.co.uk/4GdQAmYkn15vUDgTewpoe3n3iEFCyrm4');
-            break;
-        case 'midTom':
-            audio = new Audio('https://audio.jukehost.co.uk/6378XALUjrm3RKrykCi8cIqO79DiBih9');
-            break;
-        case 'lowTom':
-            audio = new Audio('https://audio.jukehost.co.uk/XDLPKPL6m3WixAeqDRhDFicsWoDMA97R');
-            break;
-        default:
-            console.log('Unknown drum type')
-            return;
-    }
-    audio.play();
-}
-*/
 
 let drumPress = (drum:string) => {
     let audio = drumSounds[drum];
