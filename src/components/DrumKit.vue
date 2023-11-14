@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from 'vue';
+import { onMounted, onBeforeUnmount} from 'vue';
 
 
 function drumPress(drum:string){
